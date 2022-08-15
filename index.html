@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="flexbox.css">
+    <title>flex-box</title>
+</head>
+<body>
+    <div class="panels">
+        <div class="panel panel1">
+            <p>Mountains</p>
+            <p>Are</p>
+            <p>Calling</p>
+        </div>
+        <div class="panel panel2">
+            <p>Explore</p>
+            <p>The</p>
+            <p>Nature</p>
+        </div>
+        <div class="panel panel3">
+            <p>Look</p>
+            <p>Deep Into</p>
+            <p>Nature</p>
+        </div>
+        <div class="panel panel4">
+            <p>change</p>
+            <p>Ain't</p>
+            <p>Easy</p>
+        </div>
+        <div class="panel panel5">
+            <p>Art</p>
+            <p>Of</p>
+            <p>God</p>
+        </div>
+    </div>
+    <script>
+        function toggleopen(){
+            this.classList.toggle('open');
+        }
+
+        function toggleactive(e){
+            if(e.propertyName.includes('flex')){
+                this.classList.toggle('open-active');
+            }
+        }
+        const panels=document.querySelectorAll('.panel');
+        panels.forEach(panel =>panel.addEventListener('click',toggleopen));
+        panels.forEach(panel =>panel.addEventListener('transitionend',toggleactive));
+    </script>
+</body>
+
+</html>
